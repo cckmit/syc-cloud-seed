@@ -1,4 +1,4 @@
-package com.syc.cloud.authorization.utils;
+package com.syc.cloud.core.utils;
 
 import cn.hutool.crypto.SecureUtil;
 import io.jsonwebtoken.Claims;
@@ -39,6 +39,7 @@ public final class AuthPasswordUtil {
             log.info("judge token is correct, the user id in token is: {}", uId);
             return true;
         } catch (Exception err) {
+            log.info(ExceptionUtils.getExceptionDetail(err));
             return false;
         }
     }
